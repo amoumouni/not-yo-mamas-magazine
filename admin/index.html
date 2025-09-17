@@ -8,6 +8,10 @@
   <body>
     <!-- Decap CMS core -->
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+    <script src="https://unpkg.com/decap-cms-media-library-cloudinary@^3/dist/decap-cms-media-library-cloudinary.js"></script>
+    <script>
+      CMS.registerMediaLibrary(cloudinary);
+    </script>
 
     <!-- (Optional) Cloudinary media library; keep for later, after it's working) -->
     <!-- <script src="https://unpkg.com/decap-cms-media-library-cloudinary@^3/dist/decap-cms-media-library-cloudinary.js"></script>
