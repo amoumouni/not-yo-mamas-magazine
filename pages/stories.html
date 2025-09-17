@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Features — Not Yo Mama’s Magazine</title>
+  <link rel="stylesheet" href="../css/base.css"/>
+  <script defer src="../js/app.js"></script>
+  <style>
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;max-width:1200px;margin:110px auto 60px;padding:0 16px}
+    .tile{position:relative;border-radius:18px;overflow:hidden;background:#141414;min-height:240px}
+    .tile img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.8)}
+    .tile h3{position:absolute;left:12px;bottom:12px;margin:0;font:700 18px/1.2 Inter,sans-serif}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" data-link>
+      <img class="brand-mark" src="../assets/logo.svg" alt=""/>
+      <span class="brand-name">Not Yo Mama’s Magazine</span>
+    </a>
+    <nav class="nav">
+      <a data-link href="issues.html">Issues</a>
+      <a data-link href="stories.html" aria-current="page">Features</a>
+      <a data-link href="about.html">About</a>
+      <a data-link href="categories/movies.html">Movies</a>
+      <a data-link href="categories/music.html">Music</a>
+      <a data-link href="categories/fashion.html">Fashion</a>
+    </nav>
+  </header>
+
+  <main id="main" class="swup-transition-fade">
+    <h1 style="max-width:1200px;margin:96px auto 12px;padding:0 16px;font:800 clamp(26px,5vw,44px)/1.1 'Playfair Display',serif">Features</h1>
+    <section class="grid" aria-label="Feature stories">
+      <a class="tile" data-link href="article.html"><img src="../assets/feature1.jpg" alt=""><h3>Reaper on the Runway</h3></a>
+      <a class="tile" data-link href="article.html#2"><img src="../assets/feature2.jpg" alt=""><h3>Diamonds in Denim</h3></a>
+      <a class="tile" data-link href="article.html#3"><img src="../assets/feature3.jpg" alt=""><h3>Respect My Disrespect</h3></a>
+    </section>
+  </main>
+</body>
+</html>

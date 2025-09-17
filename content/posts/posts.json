@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Hello World",
+    "slug": "hello-world",
+    "date": "2025-09-17T00:00:00Z",
+    "author": "AKL",
+    "cover": "https://res.cloudinary.com/YOUR_CLOUDINARY_CLOUD_NAME/image/upload/v123456/sample.jpg",
+    "filename": "2025-09-17-hello-world.md"
+  }
+]

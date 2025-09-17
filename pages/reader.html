@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Issue Reader — Not Yo Mama’s Magazine</title>
+  <link rel="stylesheet" href="../css/base.css"/>
+  <style>
+    .reader{height:100svh;overflow:hidden;background:#000;color:white}
+    .pages{display:flex;height:100%;overflow:auto;scroll-snap-type:x mandatory}
+    .pages img{height:100%;flex:none;scroll-snap-align:start;user-select:none}
+    .chrome{position:fixed;inset:auto 16px 16px auto;display:flex;gap:8px;z-index:10}
+  </style>
+  <script defer src="../js/app.js"></script>
+</head>
+<body>
+  <main class="reader" id="main">
+    <div class="pages" id="pages">
+      <img src="../assets/spread1.jpg" alt="Spread 1">
+      <img src="../assets/spread2.jpg" alt="Spread 2">
+      <img src="../assets/spread3.jpg" alt="Spread 3">
+      <img src="../assets/spread4.jpg" alt="Spread 4">
+    </div>
+    <div class="chrome">
+      <button class="btn" onclick="document.getElementById('pages').scrollBy({left:-window.innerWidth, behavior:'smooth'})">◀</button>
+      <button class="btn" onclick="document.getElementById('pages').scrollBy({left:window.innerWidth, behavior:'smooth'})">▶</button>
+      <a class="btn primary" href="issues.html">Back to issues</a>
+    </div>
+  </main>
+</body>
+</html>
