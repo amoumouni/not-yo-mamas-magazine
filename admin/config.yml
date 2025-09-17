@@ -1,15 +1,10 @@
 backend:
-  name: git-gateway # or "github" if you self-host auth
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
   branch: main
 
-publish_mode: editorial_workflow
-
-media_library:
-  name: cloudinary
-  output_filename_only: false
-  config:
-    cloud_name: YOUR_CLOUDINARY_CLOUD_NAME
-    api_key: YOUR_PUBLIC_API_KEY
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "posts"
@@ -20,8 +15,4 @@ collections:
     extension: "md"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "string", required: false }
-      - { label: "Cover", name: "cover", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
