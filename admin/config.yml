@@ -1,8 +1,15 @@
 backend:
-  name: test-repo # in-browser demo backend (no Git required)
+  name: git-gateway
+  branch: main
 
-media_folder: "public/uploads"
-public_folder: "/uploads"
+publish_mode: editorial_workflow
+
+media_library:
+  name: cloudinary
+  output_filename_only: false
+  config:
+    cloud_name: YOUR_CLOUDINARY_CLOUD_NAME
+    api_key: YOUR_PUBLIC_API_KEY
 
 collections:
   - name: posts
@@ -15,4 +22,6 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Slug, name: slug, widget: string }
       - { label: Date, name: date, widget: datetime }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Cover, name: cover, widget: image, required: false }
       - { label: Body, name: body, widget: markdown }
