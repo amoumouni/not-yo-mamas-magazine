@@ -28,3 +28,14 @@ collections:
       - { label: "Author", name: "author", widget: "string", required: false }
       - { label: "Cover", name: "cover", widget: "image", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
+
+media_library:
+  name: cloudinary
+  output_filename_only: false
+  config:
+    cloud_name: dxothvvut
+    api_key: 136962884118319
+    default_transformations:
+      - - fetch_format: auto
+          quality: auto
+    upload_preset: nymm-articles

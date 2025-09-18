@@ -1,10 +1,20 @@
 [
   {
+    "title": "New Test Post",
+    "slug": "testing",
+    "date": "2025-09-18T00:32:00.000Z",
+    "author": "Ari",
+    "cover": "https://res.cloudinary.com/dxothvvut/image/upload/v1758154098/samples/cloudinary-logo-vector.svg",
+    "excerpt": "Hi! I'm testing this out.",
+    "filename": "2025-09-18-new-test-post.md"
+  },
+  {
     "title": "Hello World",
     "slug": "hello-world",
-    "date": "2025-09-17T00:00:00Z",
+    "date": "2025-09-17T00:00:00.000Z",
     "author": "AKL",
     "cover": "https://res.cloudinary.com/YOUR_CLOUDINARY_CLOUD_NAME/image/upload/v123456/sample.jpg",
+    "excerpt": "First Post This is your first article. Create/replace me from /admin . Cloudinary stores images Markdown renders here",
     "filename": "2025-09-17-hello-world.md"
   }
 ]
