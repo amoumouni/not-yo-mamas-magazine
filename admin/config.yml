@@ -12,7 +12,7 @@ media_library:
   output_filename_only: false
   config:
     cloud_name: dxothvvut # <-- your cloud name
-    api_key: YOUR_API_KEY # <-- copy from dashboard (Product Environment Credentials)
+    api_key: 136962884118319 # <-- copy from dashboard (Product Environment Credentials)
 
 collections:
   - name: "posts"
