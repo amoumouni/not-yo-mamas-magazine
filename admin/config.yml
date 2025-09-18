@@ -1,6 +1,8 @@
 local_backend: true
+
 backend:
-  name: git-gateway
+  name: github
+  repo: amoumouni/not-yo-mamas-magazine
   branch: main
 
 publish_mode: editorial_workflow
@@ -9,20 +11,20 @@ media_library:
   name: cloudinary
   output_filename_only: false
   config:
-    cloud_name: YOUR_CLOUDINARY_CLOUD_NAME
-    api_key: YOUR_PUBLIC_API_KEY
+    cloud_name: dxothvvut # <-- your cloud name
+    api_key: YOUR_API_KEY # <-- copy from dashboard (Product Environment Credentials)
 
 collections:
-  - name: posts
-    label: Posts
-    folder: content/posts
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     extension: "md"
     fields:
-      - { label: Title, name: title, widget: string }
-      - { label: Slug, name: slug, widget: string }
-      - { label: Date, name: date, widget: datetime }
-      - { label: Author, name: author, widget: string, required: false }
-      - { label: Cover, name: cover, widget: image, required: false }
-      - { label: Body, name: body, widget: markdown }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - { label: "Cover", name: "cover", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
