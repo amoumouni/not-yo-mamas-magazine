@@ -71,10 +71,30 @@
     </div>
 
     <div class="product">
-      <h2>🧾 Monthly Print + Digital Subscription – $24/mo</h2>
+      <h2>💻 Monthly Digital Subscription – $7/mo</h2>
+      <form action="/create-checkout-session" method="POST">
+        <input
+          type="hidden"
+          name="lookup_key"
+          value="standard_monthly_digital"
+        />
+        <button type="submit">Subscribe to Digital</button>
+      </form>
+    </div>
+
+    <div class="product">
+      <h2>📰 Monthly Print Subscription – $24/mo</h2>
+      <form action="/create-checkout-session" method="POST">
+        <input type="hidden" name="lookup_key" value="standard_monthly_print" />
+        <button type="submit">Subscribe to Print</button>
+      </form>
+    </div>
+
+    <div class="product">
+      <h2>🧾 Monthly Print + Digital Subscription – $28/mo</h2>
       <form action="/create-checkout-session" method="POST">
         <input type="hidden" name="lookup_key" value="nymm_bundle_monthly" />
-        <button type="submit">Subscribe</button>
+        <button type="submit">Subscribe to Bundle</button>
       </form>
     </div>
   </body>
