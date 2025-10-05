@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NYMM Checkout</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        background: #f9f9f9;
+      }
+      h1 {
+        text-align: center;
+      }
+      .product {
+        margin: 20px auto;
+        padding: 20px;
+        max-width: 400px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .product h2 {
+        margin: 0 0 10px;
+      }
+      .product form {
+        margin-top: 15px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Not Yo Mama’s Magazine – Checkout</h1>
+
+    <div class="product">
+      <h2>📱 Digital Issue – $7</h2>
+      <form action="/create-checkout-session" method="POST">
+        <input
+          type="hidden"
+          name="lookup_key"
+          value="nymm_issue_no01_digital"
+        />
+        <button type="submit">Buy Digital Issue</button>
+      </form>
+    </div>
+
+    <div class="product">
+      <h2>📦 Print Issue – $24</h2>
+      <form action="/create-checkout-session" method="POST">
+        <input type="hidden" name="lookup_key" value="nymm_issue_no01_print" />
+        <button type="submit">Buy Print Issue</button>
+      </form>
+    </div>
+
+    <div class="product">
+      <h2>🖨️ Print + Digital Bundle – $28</h2>
+      <form action="/create-checkout-session" method="POST">
+        <input type="hidden" name="lookup_key" value="nymm_issue_no01_bundle" />
+        <button type="submit">Buy Bundle</button>
+      </form>
+    </div>
+
+    <div class="product">
+      <h2>🧾 Monthly Print + Digital Subscription – $24/mo</h2>
+      <form action="/create-checkout-session" method="POST">
+        <input type="hidden" name="lookup_key" value="nymm_bundle_monthly" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </body>
+</html>
