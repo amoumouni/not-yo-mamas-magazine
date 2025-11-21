@@ -47,17 +47,17 @@ body.page-home {
   background-image: var(--noise),
     radial-gradient(
       1200px circle at 15% 0%,
-      rgba(237, 11, 218, 0.16),
+      rgba(237, 11, 218, 0.12),
       /* FUCHSIA #ED0BDA */ transparent 60%
     ),
     radial-gradient(
       1200px circle at 85% 100%,
-      rgba(1, 147, 188, 0.12),
+      rgba(1, 147, 188, 0.09),
       /* CERULEAN #0193BC */ transparent 60%
     ),
     radial-gradient(
       1600px circle at 50% 130%,
-      rgba(137, 58, 255, 0.1),
+      rgba(137, 58, 255, 0.08),
       /* AZTEC PURPLE #893AFF */ transparent 70%
     ),
     linear-gradient(to bottom, #101010, var(--bg));
@@ -533,7 +533,7 @@ html.is-animating .swup-transition-fade {
   --ink: #111;
   --card: #fff;
   --muted: #3d4b52;
-  --ring: 0 0 0 2px var(--hot);
+  --ring: 0 0 0 2px var(--cerulean);
 }
 
 .post-cover img {
