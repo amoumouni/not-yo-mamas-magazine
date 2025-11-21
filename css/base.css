@@ -5,6 +5,7 @@
   --aztec-purple: #893aff;
   --bright-orange: #ff5900;
   --white: #ffffff;
+  --noise: url("/assets/img/noise.png");
 
   /* CHARCOAL (replacing black) */
   --charcoal: #0c0c0c;
@@ -38,10 +39,13 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  position: relative;
 }
 
 body.page-home {
-  background: radial-gradient(
+  background-color: var(--bg);
+  background-image: var(--noise),
+    radial-gradient(
       1200px circle at 15% 0%,
       rgba(237, 11, 218, 0.16),
       /* FUCHSIA #ED0BDA */ transparent 60%
@@ -57,6 +61,10 @@ body.page-home {
       /* AZTEC PURPLE #893AFF */ transparent 70%
     ),
     linear-gradient(to bottom, #101010, var(--bg));
+  background-size: 320px 320px, auto, auto, auto, auto;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: fixed, scroll, scroll, scroll, scroll;
+  background-blend-mode: soft-light, normal, normal, normal, normal;
 }
 
 body.page-home::before {
@@ -64,10 +72,12 @@ body.page-home::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.25;
+  opacity: 0.18;
   mix-blend-mode: soft-light;
-  background-image: url("/assets/img/noise.png");
-  z-index: -1;
+  background-image: var(--noise);
+  background-size: 280px 280px;
+  background-repeat: repeat;
+  z-index: 1;
 }
 
 .site-header {
