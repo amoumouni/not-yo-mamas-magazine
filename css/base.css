@@ -311,6 +311,21 @@ body.light.page-home::before {
   transform: translateY(-2px);
 }
 
+.btn.secondary {
+  border-color: var(--aztec-purple);
+  background: var(--aztec-purple);
+  color: #fff;
+  transition: all 0.25s;
+  box-shadow: 0 0 14px rgba(137, 58, 255, 0.35);
+}
+
+.btn.secondary:hover {
+  background: #a174ff;
+  border-color: #a174ff;
+  box-shadow: 0 0 18px rgba(137, 58, 255, 0.45);
+  transform: translateY(-2px);
+}
+
 .btn.text {
   border: none;
   color: var(--cerulean);
