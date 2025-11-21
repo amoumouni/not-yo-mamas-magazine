@@ -106,9 +106,9 @@ body.light.page-home {
 }
 
 body.light.page-home::before {
-  opacity: 0.5;
+  opacity: 0.38;
   mix-blend-mode: overlay;
-  background-size: 180px 180px;
+  background-size: 200px 200px;
 }
 
 .light .site-header {
@@ -389,6 +389,9 @@ body.light.page-home::before {
   letter-spacing: 0.4px;
   text-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
   color: var(--cerulean);
+}
+.light .headline {
+  color: #006c93; /* deeper cerulean for light mode readability */
 }
 
 .dek {
