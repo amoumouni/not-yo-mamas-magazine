@@ -86,6 +86,93 @@ body.page-home::before {
   z-index: -1;
 }
 
+/* Light theme overrides for readability */
+.light {
+  --bg: #f6f7fb;
+  --ink: #0e1116;
+  --card: #ffffff;
+  --muted: #4f5b66;
+  --ring: 0 0 0 2px var(--cerulean);
+}
+
+body.light.page-home {
+  background-color: #f9fafc;
+  background-image: var(--noise),
+    radial-gradient(1100px circle at 15% 0%, rgba(237, 11, 218, 0.07), transparent 58%),
+    radial-gradient(1100px circle at 85% 100%, rgba(1, 147, 188, 0.05), transparent 58%),
+    radial-gradient(1500px circle at 50% 130%, rgba(137, 58, 255, 0.04), transparent 70%),
+    linear-gradient(to bottom, #fdfdff, var(--bg));
+  background-blend-mode: soft-light, normal, normal, normal, normal;
+}
+
+.light .site-header {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.7));
+  border-bottom: 1px solid #dfe5eb;
+  backdrop-filter: saturate(130%) blur(12px);
+}
+
+.light .menu .flyout {
+  background: #ffffff;
+  border: 1px solid #e5e8ec;
+}
+
+.light .flyout a {
+  color: #12151a;
+}
+
+.light .hero-overlay {
+  background: radial-gradient(1200px 600px at 50% 60%, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.82)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.9));
+}
+
+.light .hero-content {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.7));
+  border: 1px solid #e3e6ec;
+  box-shadow: 0 26px 70px rgba(12, 20, 30, 0.12);
+}
+
+.light .headline,
+.light .dek {
+  color: #0e1116;
+  text-shadow: none;
+}
+
+.light .card {
+  background: #ffffff;
+  border: 1px solid #e5e8ec;
+  box-shadow: 0 18px 50px rgba(12, 20, 30, 0.12);
+}
+
+.light .card::before {
+  filter: saturate(1.05) brightness(1.04);
+}
+
+.light .card::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.25));
+}
+
+.light .card-body {
+  color: #0e1116;
+}
+
+.light .card p {
+  color: #27303a;
+}
+
+.light .tile,
+.light .pulse-item {
+  background: #ffffff;
+  border: 1px solid #e5e8ec;
+  box-shadow: 0 18px 50px rgba(12, 20, 30, 0.12);
+}
+
+.light .reader-table {
+  border: 1px solid #e5e8ec;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  box-shadow: 0 18px 50px rgba(12, 20, 30, 0.12);
+  color: #0e1116;
+}
+
 @keyframes grain-shift {
   0% {
     background-position: 0 0;
