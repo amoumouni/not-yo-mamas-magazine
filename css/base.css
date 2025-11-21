@@ -72,12 +72,22 @@ body.page-home::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.18;
+  opacity: 0.16;
   mix-blend-mode: soft-light;
   background-image: var(--noise);
   background-size: 280px 280px;
   background-repeat: repeat;
-  z-index: 1;
+  animation: grain-shift 14s linear infinite alternate;
+  z-index: -1;
+}
+
+@keyframes grain-shift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 220px 180px;
+  }
 }
 
 .site-header {
