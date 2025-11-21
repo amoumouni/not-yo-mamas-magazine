@@ -32,6 +32,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Prevent fixed header from covering in-page anchor targets */
+main > section {
+  scroll-margin-top: 90px;
+}
+
 body {
   background: var(--bg);
   color: var(--ink);
