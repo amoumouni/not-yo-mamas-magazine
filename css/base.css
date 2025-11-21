@@ -153,8 +153,8 @@ body.page-home::before {
 }
 
 .btn.primary {
-  border-color: var(--fuchsia);
-  background: var(--fuchsia);
+  border-color: var(--cerulean);
+  background: var(--cerulean);
   color: #fff;
   transition: all 0.25s;
 }
