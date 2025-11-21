@@ -1,12 +1,24 @@
 :root {
-  --bg: #0c0c0c;
-  --ink: #e9e9e9;
+  /* OFFICIAL NYMM COLORS */
+  --cerulean: #0193bc;
+  --fuchsia: #ed0bda;
+  --aztec-purple: #893aff;
+  --bright-orange: #ff5900;
+  --white: #ffffff;
+
+  /* CHARCOAL (replacing black) */
+  --charcoal: #0c0c0c;
+
+  /* SYSTEM COLORS */
+  --bg: var(--charcoal);
+  --ink: var(--white);
   --muted: #9aa3a8;
-  --hot: #ff2d55;
-  --acid: #00e0c6;
   --card: #141414;
-  --ring: 0 0 0 2px var(--acid);
+
+  /* UI OUTLINE COLOR */
+  --ring: 0 0 0 2px var(--cerulean);
 }
+
 * {
   box-sizing: border-box;
 }
@@ -26,6 +38,36 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+body.page-home {
+  background: radial-gradient(
+      1200px circle at 15% 0%,
+      rgba(237, 11, 218, 0.16),
+      /* FUCHSIA #ED0BDA */ transparent 60%
+    ),
+    radial-gradient(
+      1200px circle at 85% 100%,
+      rgba(1, 147, 188, 0.12),
+      /* CERULEAN #0193BC */ transparent 60%
+    ),
+    radial-gradient(
+      1600px circle at 50% 130%,
+      rgba(137, 58, 255, 0.1),
+      /* AZTEC PURPLE #893AFF */ transparent 70%
+    ),
+    linear-gradient(to bottom, #101010, var(--bg));
+}
+
+body.page-home::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.25;
+  mix-blend-mode: soft-light;
+  background-image: url("/assets/img/noise.png");
+  z-index: -1;
 }
 
 .site-header {
@@ -93,22 +135,56 @@ body {
 .flyout a {
   padding: 10px 12px;
 }
+
 .btn {
-  border: 1px solid #2a2a2a;
+  border: 1px solid var(--card);
   background: transparent;
   color: var(--ink);
   padding: 8px 12px;
   border-radius: 999px;
   cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  border-color: #2f2f2f;
+  color: var(--white);
+  transform: translateY(-1px);
 }
 
 .btn.primary {
-  border-color: var(--hot);
-  background: var(--hot);
+  border-color: var(--fuchsia);
+  background: var(--fuchsia);
   color: #fff;
+  transition: all 0.25s;
 }
+
+.btn.primary:hover {
+  background: #d10bc1;
+  border-color: #d10bc1;
+  box-shadow: 0 0 16px rgba(237, 11, 218, 0.35);
+  transform: translateY(-2px);
+}
+
+.btn.text {
+  border: none;
+  color: var(--cerulean);
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.btn.text:hover {
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
 .btn.ghost {
   border: none;
+  background: transparent;
+  transition: opacity 0.2s ease;
+}
+
+.btn.ghost:hover {
+  opacity: 0.6;
 }
 
 .hero {
@@ -237,8 +313,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--card) center/cover no-repeat;
-  background-image: var(--bg);
+  background: var(--card);
   transform: scale(1.1);
   filter: brightness(0.75);
   transition: transform 0.6s ease;
@@ -270,11 +345,6 @@ body {
 .card p {
   margin: 0 0 12px;
   color: #cbd3d8;
-}
-
-.btn.text {
-  border: none;
-  color: var(--acid);
 }
 
 .issue-strip {
