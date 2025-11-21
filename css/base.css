@@ -77,10 +77,10 @@ body.page-home::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.24;
-  mix-blend-mode: soft-light;
+  opacity: 0.42;
+  mix-blend-mode: overlay;
   background-image: var(--noise);
-  background-size: 240px 240px;
+  background-size: 200px 200px;
   background-repeat: repeat;
   animation: grain-shift 8s linear infinite alternate;
   z-index: -1;
@@ -106,9 +106,9 @@ body.light.page-home {
 }
 
 body.light.page-home::before {
-  opacity: 0.32;
-  mix-blend-mode: soft-light;
-  background-size: 220px 220px;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-size: 180px 180px;
 }
 
 .light .site-header {
