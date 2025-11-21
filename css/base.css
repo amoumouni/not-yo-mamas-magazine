@@ -409,7 +409,7 @@ body.light.page-home::before {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 28px 32px;
+  padding: 20px 24px;
   max-width: 960px;
   margin: 0 auto;
   border-radius: 26px;
