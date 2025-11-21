@@ -77,7 +77,7 @@ body.page-home::before {
   background-image: var(--noise);
   background-size: 280px 280px;
   background-repeat: repeat;
-  animation: grain-shift 14s linear infinite alternate;
+  animation: grain-shift 8s linear infinite alternate;
   z-index: -1;
 }
 
