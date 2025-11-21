@@ -86,23 +86,29 @@ body.page-home::before {
   z-index: -1;
 }
 
-/* Light theme overrides for readability */
+/* Light theme overrides for readability and texture */
 .light {
-  --bg: #f6f7fb;
-  --ink: #0e1116;
-  --card: #ffffff;
-  --muted: #4f5b66;
+  --bg: #e8eaef;
+  --ink: #0d1116;
+  --card: #f3f5f8;
+  --muted: #4b5560;
   --ring: 0 0 0 2px var(--cerulean);
 }
 
 body.light.page-home {
-  background-color: #f9fafc;
+  background-color: #eef1f5;
   background-image: var(--noise),
-    radial-gradient(1100px circle at 15% 0%, rgba(237, 11, 218, 0.07), transparent 58%),
+    radial-gradient(1100px circle at 15% 0%, rgba(237, 11, 218, 0.05), transparent 58%),
     radial-gradient(1100px circle at 85% 100%, rgba(1, 147, 188, 0.05), transparent 58%),
-    radial-gradient(1500px circle at 50% 130%, rgba(137, 58, 255, 0.04), transparent 70%),
-    linear-gradient(to bottom, #fdfdff, var(--bg));
+    radial-gradient(1500px circle at 50% 130%, rgba(137, 58, 255, 0.03), transparent 70%),
+    linear-gradient(to bottom, #f5f7fa, var(--bg));
   background-blend-mode: soft-light, normal, normal, normal, normal;
+}
+
+body.light.page-home::before {
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+  background-size: 260px 260px;
 }
 
 .light .site-header {
@@ -121,14 +127,14 @@ body.light.page-home {
 }
 
 .light .hero-overlay {
-  background: radial-gradient(1200px 600px at 50% 60%, rgba(255, 255, 255, 0.0), rgba(255, 255, 255, 0.82)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.9));
+  background: radial-gradient(1200px 600px at 50% 60%, rgba(255, 255, 255, 0), rgba(236, 239, 246, 0.65)),
+    linear-gradient(180deg, rgba(242, 245, 250, 0.7), rgba(238, 242, 248, 0.82));
 }
 
 .light .hero-content {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.7));
-  border: 1px solid #e3e6ec;
-  box-shadow: 0 26px 70px rgba(12, 20, 30, 0.12);
+  background: linear-gradient(135deg, rgba(244, 247, 251, 0.88), rgba(236, 240, 246, 0.78));
+  border: 1px solid #d9e1eb;
+  box-shadow: 0 26px 70px rgba(12, 20, 30, 0.14);
 }
 
 .light .headline,
@@ -138,8 +144,8 @@ body.light.page-home {
 }
 
 .light .card {
-  background: #ffffff;
-  border: 1px solid #e5e8ec;
+  background: #f3f5f8;
+  border: 1px solid #d7dee7;
   box-shadow: 0 18px 50px rgba(12, 20, 30, 0.12);
 }
 
@@ -148,7 +154,7 @@ body.light.page-home {
 }
 
 .light .card::after {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.25));
+  background: linear-gradient(180deg, rgba(243, 245, 248, 0.16), rgba(0, 0, 0, 0.2));
 }
 
 .light .card-body {
@@ -161,14 +167,14 @@ body.light.page-home {
 
 .light .tile,
 .light .pulse-item {
-  background: #ffffff;
-  border: 1px solid #e5e8ec;
+  background: #f3f5f8;
+  border: 1px solid #d7dee7;
   box-shadow: 0 18px 50px rgba(12, 20, 30, 0.12);
 }
 
 .light .reader-table {
-  border: 1px solid #e5e8ec;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 1px solid #d7dee7;
+  background: linear-gradient(135deg, rgba(243, 245, 248, 0.9), rgba(238, 241, 246, 0.75));
   box-shadow: 0 18px 50px rgba(12, 20, 30, 0.12);
   color: #0e1116;
 }
@@ -382,6 +388,7 @@ body.light.page-home {
   font: 800 clamp(28px, 6vw, 80px) / 1 "Playfair Display", serif;
   letter-spacing: 0.4px;
   text-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
+  color: var(--cerulean);
 }
 
 .dek {
@@ -544,6 +551,11 @@ body.light.page-home {
   padding: 0 2px;
 }
 
+.section-head h3 {
+  color: var(--cerulean);
+  letter-spacing: 0.06em;
+}
+
 .strip {
   display: flex;
   gap: 16px;
@@ -612,7 +624,8 @@ body.light.page-home {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 11px;
-  color: var(--muted);
+  color: var(--cerulean);
+  opacity: 0.9;
   margin: 0 0 6px;
 }
 
