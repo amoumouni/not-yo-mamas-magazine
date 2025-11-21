@@ -320,9 +320,9 @@ body.light.page-home::before {
 }
 
 .btn.secondary:hover {
-  background: #a174ff;
-  border-color: #a174ff;
-  box-shadow: 0 0 18px rgba(137, 58, 255, 0.45);
+  background: var(--bright-orange);
+  border-color: var(--bright-orange);
+  box-shadow: 0 0 18px rgba(255, 89, 0, 0.45);
   transform: translateY(-2px);
 }
 
