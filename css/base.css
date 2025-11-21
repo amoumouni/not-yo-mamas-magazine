@@ -93,14 +93,15 @@ body.page-home::before {
 .site-header {
   position: fixed;
   inset: 0 0 auto 0;
-  height: 64px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 20px;
   z-index: 50;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent);
-  backdrop-filter: saturate(140%) blur(8px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.35));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: saturate(150%) blur(12px);
 }
 
 .brand {
@@ -121,15 +122,38 @@ body.page-home::before {
 .nav {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 8px;
 }
 .nav a {
+  position: relative;
   color: var(--ink);
   text-decoration: none;
   opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  padding: 10px 12px;
+  border-radius: 999px;
 }
 .nav a:hover {
   opacity: 1;
+}
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 6px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(237, 11, 218, 0), rgba(237, 11, 218, 0.8), rgba(1, 147, 188, 0));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+  border-radius: 999px;
+}
+.nav a:hover::after,
+.nav a:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .menu {
@@ -146,6 +170,7 @@ body.page-home::before {
   flex-direction: column;
   min-width: 180px;
   z-index: 60;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
 }
 
 .menu:hover .flyout {
@@ -154,6 +179,8 @@ body.page-home::before {
 
 .flyout a {
   padding: 10px 12px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
 }
 
 .btn {
@@ -336,8 +363,11 @@ body.page-home::before {
   min-height: 360px;
   border-radius: 24px;
   overflow: hidden;
-  background: var(--card);
+  background: #0f0f0f;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
   isolation: isolate;
+  transition: transform 0.6s ease, box-shadow 0.6s ease, border-color 0.3s ease;
 }
 
 @media (min-width: 860px) {
@@ -356,14 +386,18 @@ body.page-home::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--card);
-  transform: scale(1.1);
-  filter: brightness(0.75);
-  transition: transform 0.6s ease;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.65)),
+    var(--bg, var(--card));
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.08);
+  filter: saturate(1.05);
+  transition: transform 0.6s ease, filter 0.6s ease;
 }
 
 .card:hover::before {
-  transform: scale(1.16);
+  transform: scale(1.15);
+  filter: saturate(1.15) brightness(1.02);
 }
 
 .card::after {
@@ -376,18 +410,32 @@ body.page-home::before {
 .card-body {
   position: relative;
   z-index: 1;
-  padding: 24px;
-  max-width: 560px;
+  padding: 28px;
+  max-width: 620px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 10px;
 }
 
 .card h2 {
-  font: 800 32px/1.1 "Playfair Display", serif;
-  margin: 0 0 8px;
+  font: 800 clamp(24px, 3vw, 36px) / 1.05 "Playfair Display", serif;
+  margin: 0 0 10px;
+  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
 }
 
 .card p {
   margin: 0 0 12px;
-  color: #cbd3d8;
+  color: #d4dbe0;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .issue-strip {
