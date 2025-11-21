@@ -145,7 +145,7 @@ body.page-home::before {
   right: 12px;
   bottom: 6px;
   height: 2px;
-  background: linear-gradient(90deg, rgba(237, 11, 218, 0), rgba(237, 11, 218, 0.8), rgba(1, 147, 188, 0));
+  background: linear-gradient(90deg, rgba(1, 147, 188, 0), rgba(1, 147, 188, 0.85), rgba(1, 147, 188, 0));
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 0.25s ease;
