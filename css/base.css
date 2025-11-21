@@ -332,6 +332,19 @@ body.light.page-home::before {
   opacity: 0.6;
 }
 
+.light .btn.ghost {
+  color: #0d1116;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+.light .btn.ghost:hover {
+  opacity: 1;
+  border-color: rgba(1, 147, 188, 0.35);
+  color: #006c93;
+}
+
 .hero {
   position: relative;
   min-height: 100svh;
