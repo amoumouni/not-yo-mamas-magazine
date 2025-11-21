@@ -214,6 +214,7 @@ body.page-home::before {
   place-items: center;
   text-align: center;
   overflow: hidden;
+  padding: 96px 16px 140px;
 }
 
 .hero-video {
@@ -236,21 +237,40 @@ body.page-home::before {
     linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.85));
 }
 
+.hero::after {
+  /* edge vignette for luxury depth */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(90% 120% at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.45));
+  pointer-events: none;
+}
+
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 24px;
+  padding: 28px 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(10px) saturate(130%);
 }
 
 .headline {
   font: 800 clamp(28px, 6vw, 80px) / 1 "Playfair Display", serif;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.55);
 }
 
 .dek {
   max-width: 720px;
   margin: 12px auto 20px;
-  color: #cbd3d8;
+  color: #d6dce0;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .cta-row {
@@ -265,10 +285,13 @@ body.page-home::before {
   left: 50%;
   bottom: 18px;
   transform: translateX(-50%);
-  background: transparent;
-  border: 0;
+  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--ink);
-  opacity: 0.8;
+  opacity: 0.9;
+  padding: 8px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
 }
 
 .ticker {
