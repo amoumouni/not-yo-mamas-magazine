@@ -374,7 +374,7 @@ body.light.page-home::before {
   place-items: center;
   text-align: center;
   overflow: hidden;
-  padding: 96px 16px 140px;
+  padding: 72px 16px 90px;
 }
 
 .hero-video {
@@ -447,7 +447,7 @@ body.light.page-home::before {
 .scroll-hint {
   position: absolute;
   left: 50%;
-  bottom: 18px;
+  bottom: 12px;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.08);
