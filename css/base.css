@@ -369,12 +369,12 @@ body.light.page-home::before {
 
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: calc(100svh - 140px);
   display: grid;
   place-items: center;
   text-align: center;
   overflow: hidden;
-  padding: 72px 16px 90px;
+  padding: 56px 16px 56px;
 }
 
 .hero-video {
