@@ -3,98 +3,352 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>About — Not Yo Mama's Magazine</title>
+  <title>About - Not Yo Mama's Magazine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/base.css"/>
   <script defer src="../js/app.js"></script>
   <style>
-    main {
-      padding: 120px 16px 100px;
-      max-width: 980px;
+    body.page-about {
+      background-color: var(--bg);
+      background-image: var(--noise),
+        radial-gradient(1200px 900px at 14% 12%, rgba(1, 147, 188, 0.14), transparent 60%),
+        radial-gradient(1100px 800px at 86% 88%, rgba(237, 11, 218, 0.1), transparent 60%),
+        radial-gradient(1400px 1100px at 50% 120%, rgba(137, 58, 255, 0.08), transparent 70%),
+        linear-gradient(180deg, #101010, var(--charcoal));
+      background-size: 320px 320px, auto, auto, auto, auto;
+      background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+      background-attachment: fixed, scroll, scroll, scroll, scroll;
+    }
+    body.light.page-about {
+      background-image: var(--noise),
+        radial-gradient(1200px 900px at 14% 12%, rgba(1, 147, 188, 0.08), transparent 60%),
+        radial-gradient(1100px 800px at 86% 88%, rgba(237, 11, 218, 0.06), transparent 60%),
+        radial-gradient(1400px 1100px at 50% 120%, rgba(137, 58, 255, 0.06), transparent 70%),
+        linear-gradient(180deg, #f3f5f8, #e8eaef);
+      background-blend-mode: soft-light, normal, normal, normal, normal;
+    }
+    main.about-main {
+      padding: 120px 18px 100px;
+      max-width: 1180px;
       margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
     }
-    .about-card {
-      background: radial-gradient(140% 140% at 20% 0%, rgba(1, 147, 188, 0.08), transparent 55%),
-        radial-gradient(140% 140% at 80% 100%, rgba(137, 58, 255, 0.08), transparent 55%),
-        rgba(12, 12, 12, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .surface {
+      position: relative;
       border-radius: 28px;
-      padding: 32px 28px;
-      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
-      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+      backdrop-filter: blur(12px) saturate(130%);
     }
-    h1 {
-      font: 800 clamp(32px, 5vw, 64px)/1.05 'Playfair Display', serif;
+    .about-hero {
+      padding: 32px 30px 34px;
+      isolation: isolate;
+    }
+    .about-hero::before,
+    .about-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+    .about-hero::before {
+      background: radial-gradient(120% 120% at 18% 12%, rgba(1, 147, 188, 0.26), transparent 50%),
+        radial-gradient(90% 90% at 82% 24%, rgba(137, 58, 255, 0.2), transparent 55%),
+        radial-gradient(120% 120% at 84% 90%, rgba(237, 11, 218, 0.18), transparent 60%),
+        linear-gradient(160deg, rgba(12, 12, 12, 0.9), rgba(12, 12, 12, 0.74));
+    }
+    .about-hero::after {
+      background: radial-gradient(100% 140% at 50% 50%, rgba(0, 0, 0, 0.45), transparent 60%);
+      mix-blend-mode: soft-light;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .hero-copy {
+      grid-column: span 7;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-copy h1 {
+      font: 800 clamp(32px, 5vw, 70px) / 1.02 "Playfair Display", serif;
       color: var(--cerulean);
-      margin: 0 0 12px;
-    }
-    h2 {
-      font: 700 26px/1.2 'Playfair Display', serif;
-      margin: 30px 0 10px;
-      color: var(--cerulean);
-    }
-    p {
-      color: #d4dbe0;
-      margin: 0 0 14px;
-      line-height: 1.7;
+      margin: 0;
+      letter-spacing: 0.2px;
     }
     .lede {
-      font-size: 1.15rem;
-      color: #e3e8ec;
-      margin-bottom: 20px;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      color: #dfe5ea;
+      margin: 0 0 6px;
+      max-width: 760px;
     }
-    ul {
-      padding-left: 18px;
-      color: #d4dbe0;
-      line-height: 1.7;
-    }
-    .pill-row {
+    .hero-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin: 16px 0 8px;
+      gap: 8px;
     }
-    .pill {
-      border: 1px solid rgba(1, 147, 188, 0.6);
+    .tag {
+      border: 1px solid rgba(1, 147, 188, 0.5);
+      background: rgba(1, 147, 188, 0.14);
       color: var(--ink);
-      background: rgba(1, 147, 188, 0.12);
-      padding: 8px 12px;
+      padding: 7px 12px;
       border-radius: 999px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+    .hero-side {
+      grid-column: span 5;
+      display: grid;
+      gap: 12px;
+    }
+    .quote-card {
+      padding: 18px 18px 14px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(14, 14, 14, 0.85);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+    .quote-card p {
+      margin: 0 0 8px;
+      color: #dfe5ea;
+      line-height: 1.6;
+    }
+    .quote {
+      font: 700 20px/1.4 "Playfair Display", serif;
+      color: var(--white);
+    }
+    .cite {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .mini-card {
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+    }
+    .mini-card .eyebrow {
+      margin-bottom: 4px;
+    }
+    .stat {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .capsule {
+      padding: 26px 24px;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    h2.section-title {
+      font: 800 28px/1.1 "Playfair Display", serif;
+      color: var(--cerulean);
+      margin: 0 0 4px;
+    }
+    p.body {
+      color: #d4dbe0;
+      margin: 0;
+      line-height: 1.7;
+    }
+    .list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    .list li {
+      position: relative;
+      padding-left: 20px;
+      color: #d4dbe0;
+      line-height: 1.6;
+    }
+    .list li::before {
+      content: "*";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--cerulean);
+      font-weight: 700;
+    }
+    .accent {
+      background: linear-gradient(135deg, rgba(1, 147, 188, 0.16), rgba(137, 58, 255, 0.1));
+      border-color: rgba(1, 147, 188, 0.4);
+    }
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .pillar {
+      padding: 16px 16px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 15, 15, 0.82);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+    }
+    .pillar h3 {
+      margin: 0 0 8px;
+      font: 700 18px/1.3 "Playfair Display", serif;
+      color: var(--white);
+      letter-spacing: 0.2px;
+    }
+    .pillar p {
+      margin: 0;
+      color: #d4dbe0;
+      line-height: 1.65;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #dfe5ea;
+    }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .time-card {
+      padding: 14px 14px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(15, 15, 15, 0.86);
+      display: grid;
+      gap: 6px;
+    }
+    .time-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 13px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
+      color: var(--cerulean);
     }
-    .subtle {
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-    .cta-inline {
-      display: inline-flex;
-      gap: 10px;
+    .cta-bar {
+      display: flex;
       align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(135deg, rgba(1, 147, 188, 0.16), rgba(237, 11, 218, 0.12));
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
       flex-wrap: wrap;
-      margin-top: 10px;
     }
-    .light .about-card {
-      background: radial-gradient(140% 140% at 20% 0%, rgba(1, 147, 188, 0.08), transparent 55%),
-        radial-gradient(140% 140% at 80% 100%, rgba(137, 58, 255, 0.08), transparent 55%),
-        rgba(243, 245, 248, 0.92);
+    .cta-bar p {
+      margin: 0;
+      color: #f0f4f6;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .light .surface {
       border: 1px solid #d7dee7;
-      box-shadow: 0 28px 70px rgba(12, 20, 30, 0.12);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(244, 247, 251, 0.9));
+      box-shadow: 0 26px 70px rgba(12, 20, 30, 0.14);
     }
-    .light p,
-    .light ul,
-    .light .lede {
+    .light .about-hero::before {
+      background: radial-gradient(120% 120% at 18% 12%, rgba(1, 147, 188, 0.16), transparent 50%),
+        radial-gradient(90% 90% at 82% 24%, rgba(137, 58, 255, 0.12), transparent 55%),
+        radial-gradient(120% 120% at 84% 90%, rgba(237, 11, 218, 0.12), transparent 60%),
+        linear-gradient(160deg, rgba(238, 241, 246, 0.96), rgba(235, 239, 245, 0.9));
+    }
+    .light .about-hero::after {
+      background: radial-gradient(100% 140% at 50% 50%, rgba(255, 255, 255, 0.5), transparent 60%);
+    }
+    .light .quote-card,
+    .light .pillar,
+    .light .time-card {
+      background: #f3f5f8;
+      border: 1px solid #d7dee7;
+      box-shadow: 0 18px 50px rgba(12, 20, 30, 0.12);
+    }
+    .light .quote-card p,
+    .light .pillar p,
+    .light p.body {
       color: #1a2028;
     }
-    .light .subtle {
-      color: #4b5560;
+    .light .quote {
+      color: #0e1116;
+    }
+    .light .cite,
+    .light .stat,
+    .light .chip {
+      color: #27303a;
+    }
+    .light .list li {
+      color: #1a2028;
+    }
+    .light .list li::before {
+      color: #006c93;
+    }
+    .light .timeline .time-label {
+      color: #006c93;
+    }
+    .light .cta-bar {
+      border-color: #d7dee7;
+      background: linear-gradient(135deg, rgba(1, 147, 188, 0.12), rgba(237, 11, 218, 0.08));
+      box-shadow: 0 20px 50px rgba(12, 20, 30, 0.16);
+    }
+    @media (max-width: 960px) {
+      .hero-copy { grid-column: span 12; }
+      .hero-side { grid-column: span 12; }
+      .about-hero { padding: 26px 22px; }
     }
     @media (max-width: 640px) {
-      .about-card {padding: 24px 18px;}
+      main.about-main { padding: 110px 14px 80px; }
+      .surface { border-radius: 22px; }
+      .hero-cta { flex-direction: column; align-items: stretch; }
+      .cta-bar { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
-<body data-swup="true">
+<body class="page-about" data-swup="true">
+  <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="../index.html" data-link>
       <img class="brand-mark" src="../assets/logo.svg" alt=""/>
@@ -105,46 +359,186 @@
       <a data-link href="stories.html">Features</a>
       <a data-link href="../blog/">Articles</a>
       <a data-link href="about.html" aria-current="page">About</a>
+      <button id="themeToggle" class="btn ghost" aria-label="Toggle theme">Theme</button>
+      <button id="audioToggle" class="btn ghost" aria-label="Toggle audio">dY"S</button>
     </nav>
   </header>
 
-  <main id="main" class="swup-transition-fade">
-    <div class="about-card">
-      <h1>About Not Yo Mama's Magazine</h1>
-      <p class="lede"><strong>Bridging Heritage and New Horizons.</strong> A Black-owned, diaspora-first magazine built to feel like a premiere, not a page—where culture, luxury, and community sit at the same table.</p>
-
-      <h2>Mission</h2>
-      <p>We champion the brilliance of the Black diaspora—celebrating heritage, spotlighting innovators, and telling stories with the swagger of Jet, Essence, and Ebony, remixed for right now.</p>
-
-      <h2>What We Cover</h2>
-      <div class="pill-row">
-        <span class="pill">Community Pulse</span>
-        <span class="pill">Spotlight Covers</span>
-        <span class="pill">Money &amp; Power</span>
-        <span class="pill">Beauty &amp; Style</span>
-        <span class="pill">Music &amp; Film</span>
-        <span class="pill">Wellness &amp; Joy</span>
-        <span class="pill">Heritage &amp; History</span>
-        <span class="pill">Photo Essays</span>
-        <span class="pill">Directory</span>
+  <main id="main" class="swup-transition-fade about-main">
+    <section class="about-hero surface">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Not Yo Mama's Magazine</p>
+          <h1>Luxurious, living-room honest.</h1>
+          <p class="lede">
+            Bridging heritage and new horizons with a Black-owned, diaspora-first voice. We make the coffee-table magazine you proudly display—and the trusted guide you bring to the cookout, the gallery, the boardroom, and the block.
+          </p>
+          <div class="hero-tags">
+            <span class="tag">Diaspora luxury</span>
+            <span class="tag">Culture reporting</span>
+            <span class="tag">Photo essays</span>
+            <span class="tag">Money &amp; power</span>
+          </div>
+          <div class="hero-cta">
+            <a data-link class="btn primary" href="issues.html">See latest issue</a>
+            <a data-link class="btn secondary" href="stories.html">Browse features</a>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="quote-card">
+            <p class="quote">This is not your mama's magazine—it's the future she dreamed of and the archive she deserved.</p>
+            <p class="cite">A magazine that honors the blueprint while remixing it with sharp reporting, couture visuals, and community-first intention.</p>
+          </div>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <p class="eyebrow">Pulse</p>
+              <p class="stat">Diaspora-first, luxury always.</p>
+            </div>
+            <div class="mini-card">
+              <p class="eyebrow">Stance</p>
+              <p class="stat">Heritage as compass, joy as protest.</p>
+            </div>
+            <div class="mini-card">
+              <p class="eyebrow">Format</p>
+              <p class="stat">Print energy, digital speed.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="subtle">Every story carries a diaspora lens—rooted in legacy, elevated in presentation, and crafted to feel immersive.</p>
+    </section>
 
-      <h2>Voice &amp; Values</h2>
-      <ul>
-        <li><strong>Luxurious, not distant.</strong> Cinematic visuals, tactile textures, and considered design that still feels lived-in.</li>
-        <li><strong>Heritage-forward.</strong> We honor lineage—archival nods, oral histories, and elders beside tomorrow’s icons.</li>
-        <li><strong>Community-led.</strong> Reader letters, submissions, and Black-owned directories keep us accountable to the culture.</li>
-        <li><strong>Global Black lens.</strong> From Lagos to Atlanta to London to Kingston—stories cross borders, rhythms, and languages.</li>
-      </ul>
-
-      <h2>How to Plug In</h2>
-      <p>Pitch a feature, submit a photo essay, share your event, or add your Black-owned business to the directory.</p>
-      <div class="cta-inline">
-        <a data-link class="btn primary" href="../pages/contact.html">Submit / Pitch</a>
-        <a data-link class="btn secondary" href="../pages/directory.html">List Your Business</a>
+    <section class="surface capsule">
+      <div class="split">
+        <div class="stack">
+          <h2 class="section-title">Why we exist</h2>
+          <p class="body">We grew up flipping Jet and Essence on the living room floor, memorizing covers and centerfolds, hearing aunties debate politics, faith, and fashion. Not Yo Mama's Magazine keeps that intimacy but upgrades the production—a luxurious, global Black lens that feels like velvet and vinyl at once.</p>
+          <ul class="list">
+            <li>Editorial that respects lineage and experiments boldly.</li>
+            <li>Stories that put community at the head of the table, not just in the footnotes.</li>
+            <li>Design that feels like a keepsake: tactile gradients, grounded charcoal, electric cerulean.</li>
+          </ul>
+        </div>
+        <div class="stack surface accent">
+          <h2 class="section-title">What you feel</h2>
+          <p class="body">Each issue blends runway polish with living-room honesty: cinematic imagery, layered texture, heritage citations, and a soundtrack humming underneath it all.</p>
+          <div class="chips">
+            <span class="chip">Archival nods</span>
+            <span class="chip">Runway pace</span>
+            <span class="chip">Policy heat</span>
+            <span class="chip">Joy &amp; play</span>
+            <span class="chip">Global Black lens</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section class="surface capsule">
+      <h2 class="section-title">Our signature mix</h2>
+      <p class="body">Ten sections, one heartbeat. Every story is a thread between heritage, style, power, and the people shaping what's next.</p>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Community Pulse</h3>
+          <p>Policy shifts, city beats, and the movements shaping our neighborhoods.</p>
+        </div>
+        <div class="pillar">
+          <h3>Spotlight Covers</h3>
+          <p>Icons and first-timers staged like album art, profiled like family.</p>
+        </div>
+        <div class="pillar">
+          <h3>Money &amp; Power</h3>
+          <p>Playbooks for career, capital, and ownership across the diaspora.</p>
+        </div>
+        <div class="pillar">
+          <h3>Beauty &amp; Style</h3>
+          <p>Runway meets ritual—textures, braids, silhouettes, and the labs behind them.</p>
+        </div>
+        <div class="pillar">
+          <h3>Music &amp; Film</h3>
+          <p>Soundtracks, premieres, and the directors lighting melanin like magic.</p>
+        </div>
+        <div class="pillar">
+          <h3>Wellness &amp; Joy</h3>
+          <p>Rest, rituals, therapists who know your aunties, and playlists that heal.</p>
+        </div>
+        <div class="pillar">
+          <h3>Heritage &amp; History</h3>
+          <p>Archives reawakened—posters, protests, cookbooks, and quilts remembered.</p>
+        </div>
+        <div class="pillar">
+          <h3>Photo Essays</h3>
+          <p>Visual sermons from emerging photographers and stylists across the globe.</p>
+        </div>
+        <div class="pillar">
+          <h3>Directory</h3>
+          <p>Black-owned brands, healers, builders, and hosts—curated with receipts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="surface capsule">
+      <h2 class="section-title">How each story is built</h2>
+      <p class="body">We start with the culture, verify with receipts, and layer with art direction that feels like a premiere.</p>
+      <div class="timeline">
+        <div class="time-card">
+          <span class="time-label">Report</span>
+          <p class="body">Source across the diaspora—from barbershops to boardrooms to basements where legends rehearse.</p>
+        </div>
+        <div class="time-card">
+          <span class="time-label">Context</span>
+          <p class="body">Honor the elders, cite the archives, map how today echoes decades of craft and resistance.</p>
+        </div>
+        <div class="time-card">
+          <span class="time-label">Design</span>
+          <p class="body">Couture-inspired layouts, velvet charcoal backdrops, cerulean sparks, fuchsia glows.</p>
+        </div>
+        <div class="time-card">
+          <span class="time-label">Return</span>
+          <p class="body">Bring the story back to the people who lent it—reader tables, letters, and community screenings.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="surface capsule">
+      <h2 class="section-title">Plug in</h2>
+      <p class="body">Pitch a feature, submit a photo essay, share a directory gem, or build something with us. The table is set—pull up.</p>
+      <div class="cta-bar">
+        <p>Ready to collaborate, advertise, or get covered?</p>
+        <div class="hero-cta">
+          <a data-link class="btn primary" href="../pages/contact.html">Submit / Pitch</a>
+          <a data-link class="btn secondary" href="../pages/directory.html">List your business</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <form
+      class="signup"
+      action="#"
+      method="post"
+      onsubmit="event.preventDefault(); window.NYMM.subscribe(this)"
+    >
+      <label for="email">Get the drop first:</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        placeholder="you@domain.com"
+        required
+      />
+      <button class="btn primary" type="submit">Subscribe</button>
+      <small class="hint"
+        >We'll never spam.
+        <a data-link href="../pages/privacy.html">Privacy</a></small
+      >
+    </form>
+    <div class="legal">
+      <span>&copy; <span id="y"></span> Not Yo Mama's Magazine</span>
+      <a data-link href="../pages/contact.html">Contact</a>
+      <a data-link href="../pages/credits.html">Credits</a>
+    </div>
+  </footer>
+
+  <audio id="ambience" src="../assets/ambience.mp3" loop preload="auto"></audio>
 </body>
 </html>

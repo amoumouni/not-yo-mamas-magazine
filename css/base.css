@@ -82,7 +82,7 @@ body.page-home::before {
   background-image: var(--noise);
   background-size: 200px 200px;
   background-repeat: repeat;
-  animation: grain-shift 8s linear infinite alternate;
+  animation: grain-shift 5.5s linear infinite alternate;
   z-index: -1;
 }
 
@@ -184,7 +184,7 @@ body.light.page-home::before {
     background-position: 0 0;
   }
   100% {
-    background-position: 220px 180px;
+    background-position: 420px 320px;
   }
 }
 
