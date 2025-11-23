@@ -447,36 +447,65 @@ body.light.page-home::before {
 .scroll-hint {
   position: absolute;
   left: 50%;
-  bottom: 12px;
+  bottom: 18px;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(120% 140% at 20% 20%, rgba(1, 147, 188, 0.22), transparent 50%),
+    radial-gradient(120% 140% at 80% 80%, rgba(137, 58, 255, 0.18), transparent 50%),
+    rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(1, 147, 188, 0.35);
   color: var(--ink);
-  opacity: 0.9;
-  padding: 8px 12px;
+  opacity: 0.95;
+  padding: 10px 14px;
   border-radius: 999px;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(137, 58, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.scroll-hint:hover {
+  transform: translateX(-50%) translateY(-2px);
+  border-color: var(--cerulean);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(1, 147, 188, 0.25);
 }
 
 .ticker {
   position: relative;
   overflow: hidden;
-  border-block: 1px solid #222;
-  background: #0b0b0b;
+  border-block: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(120% 140% at 0% 50%, rgba(1, 147, 188, 0.08), transparent 45%),
+    radial-gradient(120% 140% at 100% 50%, rgba(237, 11, 218, 0.06), transparent 45%),
+    #0b0b0b;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.light .ticker {
+  border-block: 1px solid rgba(0, 0, 0, 0.08);
+  background: radial-gradient(120% 140% at 0% 50%, rgba(1, 147, 188, 0.08), transparent 45%),
+    radial-gradient(120% 140% at 100% 50%, rgba(237, 11, 218, 0.05), transparent 45%),
+    #eef1f5;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 16px 40px rgba(12, 20, 30, 0.14);
 }
 
 .ticker .track {
   display: flex;
   width: max-content;
   gap: 40px;
-  padding: 10px 0;
+  padding: 12px 0;
   animation: marquee 18s linear infinite;
 }
 
 .ticker span {
   white-space: nowrap;
-  color: #b6bec4;
-  letter-spacing: 0.5px;
+  color: var(--cerulean);
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.light .ticker span {
+  color: #006c93;
+  text-shadow: 0 8px 20px rgba(12, 20, 30, 0.15);
 }
 
 @keyframes marquee {
