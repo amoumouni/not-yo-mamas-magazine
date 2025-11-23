@@ -5,7 +5,7 @@
   --aztec-purple: #893aff;
   --bright-orange: #ff5900;
   --white: #ffffff;
-  --noise: url("/assets/img/noise.png");
+  --noise: url("/assets/img/noise/nymm-noise__cerulean.png");
 
   /* CHARCOAL (replacing black) */
   --charcoal: #0c0c0c;
@@ -106,8 +106,9 @@ body.light.page-home {
 }
 
 body.light.page-home::before {
-  opacity: 0.38;
-  mix-blend-mode: overlay;
+  opacity: 0.62;
+  mix-blend-mode: soft-light;
+  filter: contrast(1.35);
   background-size: 200px 200px;
 }
 
